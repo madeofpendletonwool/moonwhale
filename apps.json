@@ -1,0 +1,26 @@
+{
+  "env": {
+    "DISPLAY": ":99"
+  },
+  "apps": [
+    {
+      "name": "Moonwhale Setup",
+      "cmd": "python3 /home/user/apps/setup.py",
+      "detached": true,
+      "image-path": "/home/user/apps/images/moonwhale.jpg",
+      "prep-cmd": "pkill -f 'python3 /home/user/apps/setup.py' || true"
+    },
+    {
+      "name": "Terminal",
+      "cmd": "xterm",
+      "detached": true,
+      "image-path": "/home/user/apps/images/moonwhale.jpg"
+    },
+    {
+      "name": "Test App",
+      "cmd": "xsetroot -solid blue",
+      "detached": true,
+      "image-path": "/home/user/apps/images/moonwhale.jpg"
+    }
+  ]
+}

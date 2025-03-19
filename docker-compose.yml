@@ -1,0 +1,12 @@
+services:
+  moonlight-server:
+    build: .
+    container_name: moonlight-server
+    restart: unless-stopped
+    privileged: true # Needed for input devices
+    network_mode: host # Important for streaming
+    volumes:
+      - ./config:/home/user/.config # Persistent configuration
+      - ./apps:/home/user/apps # Mount your applications
+    environment:
+      - DISPLAY=:99
